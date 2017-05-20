@@ -3,7 +3,7 @@
 
 	"name": "NN Gonger",
 	"description": "Created by NC Production",
-	"version": "2.0",
+	"version": "1.0",
 	"icons": {
 		"200":"icon/icon200.png"
 	},
@@ -16,8 +16,6 @@
 	"page_action": {
 		"default_icon": "icon/icon200.png"
 	},
-
-	//"options_page": "options.html",
 
 	"permissions": [
 		"activeTab", "declarativeContent", "tabs", "webNavigation", "http://www.ngdrei.co.th/gachapon*"
