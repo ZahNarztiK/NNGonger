@@ -1,7 +1,5 @@
 chrome.pageAction.onClicked.addListener(tab=>{
-	chrome.tabs.executeScript(tab.id,{file:"jquery-1.7.2.js"},()=>
-		chrome.tabs.executeScript(tab.id,{file:"nngg.js"},()=>
-			chrome.tabs.executeScript(tab.id,{code:"nn_inj()"})));
+	chrome.tabs.executeScript(tab.id,{file:"nngg_run.js"});
 });
 
 chrome.runtime.onInstalled.addListener(()=>
@@ -17,3 +15,9 @@ chrome.runtime.onInstalled.addListener(()=>
 		])
 	)
 );
+
+chrome.webNavigation.onCompleted.addListener(details=>{
+		chrome.tabs.executeScript(details.tabId,{file:"nngg.js"});
+	}, {
+		url: [{ urlPrefix: "http://www.ngdrei.co.th/gachapon" }],
+});

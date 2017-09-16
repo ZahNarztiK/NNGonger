@@ -1,4 +1,4 @@
-function nn_inj(){
+function nn_gong(){
 	var ht=$('html').html(),
 		cn=$('#ComNumCheck').val(),
 		mn=/txtMacAddress = ['"](.*)['"];/i.exec(ht)[1];
@@ -24,3 +24,17 @@ function nn_inj(){
 			});
 	}
 }
+
+function nn_inj(){
+	var s=document.createElement("script");
+	s.src=chrome.extension.getURL("hjqs.js");
+	s.onload=function() { this.remove(); };
+	(document.head||document.documentElement).appendChild(s);
+
+	s=document.createElement("script");
+	s.src=chrome.extension.getURL("nngg_inj.js");
+	s.onload=function() { this.remove(); };
+	(document.head||document.documentElement).appendChild(s);
+}
+
+nn_inj();

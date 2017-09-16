@@ -2,8 +2,8 @@
 	"manifest_version": 2,
 
 	"name": "NN Gonger",
-	"description": "Created by NC Production",
-	"version": "2.0",
+	"description": "Created by NCP",
+	"version": "3.0",
 	"icons": {
 		"200":"icon/icon200.png"
 	},
@@ -12,6 +12,13 @@
 		"scripts": ["background.js"],
 		"persistent": false
 	},
+
+	"content_scripts": [
+		{
+			"matches": ["http://www.ngdrei.co.th/gachapon*"],
+			"js": ["jquery-1.7.2.js"]
+		}
+	],
 
 	"page_action": {
 		"default_icon": "icon/icon200.png"
@@ -22,6 +29,6 @@
 	],
 
 	"web_accessible_resources": [
-		"icon/noti.png"
+		"hjqs.js", "nngg_inj.js"
 	]
 }
