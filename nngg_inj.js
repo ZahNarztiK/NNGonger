@@ -94,17 +94,29 @@ $(function(){
 			$('#ShowReward').hide().empty();	
 			
 			var listn=machine1.len(),
-				hrnd=[ Math.floor(Math.random()*listn), Math.floor(Math.random()*listn), Math.floor(Math.random()*listn) ],
-				hrndn=null;
-			if(hrnd[0]==hrnd[1]||hrnd[0]==hrnd[2])
-				hrndn=hrnd[0];
-			else if(hrnd[1]==hrnd[2])
-				hrndn=hrnd[1];
-			console.log(listn+"\n"+hrnd+"\n"+hrndn);
+				hrnd=[],hrndc={},
+				hrndn=null,hrndcn=0;
 
-			machine1.shuffle(5, onComplete, hrndn!=null?hrndn:hrnd[0]);
-			machine2.shuffle(5, onComplete, hrndn!=null?hrndn:hrnd[1]);
-			machine3.shuffle(5, onComplete, hrndn!=null?hrndn:hrnd[2]);
+			for(var i=0;i<4;i++){
+				hrnd.push(Math.floor(Math.random()*listn).toString());
+				if(hrnd[i] in hrndc){
+					hrndc[hrnd[i]]++;
+					if(hrndc[hrnd[i]]>hrndcn){
+						hrndn=hrnd[i];
+						hrndcn=hrndc[hrnd[i]];
+					}
+					else if(hrndc[hrnd[i]]==hrndcn&&hrnd[i]>hrndn) hrndn=hrnd[i];
+				}
+				else hrndc[hrnd[i]]=1;
+			}
+
+			console.log(listn+"\n"+hrnd)
+			console.log(hrndc)
+			console.log(hrndn);
+
+			machine1.shuffle(5, onComplete, parseInt(hrndn!=null?hrndn:hrnd[0]));
+			machine2.shuffle(6, onComplete, parseInt(hrndn!=null?hrndn:hrnd[1]));
+			machine3.shuffle(7, onComplete, parseInt(hrndn!=null?hrndn:hrnd[2]));
 			
 			setTimeout(function(){
 				var HideCredit = $('#HideCredit').val();

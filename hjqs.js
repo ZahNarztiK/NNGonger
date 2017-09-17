@@ -335,7 +335,7 @@
 			_setAnimationFX("slow", true);
 			_isRunning = true;
 			
-			if( !_isVisible() ){
+			/*if( !_isVisible() ){
 				if( typeof _oncompleteShuffling==='function' ){
 					_oncompleteShuffling(false, false);
 				}
@@ -343,7 +343,7 @@
 				_resetPosition();
 				_isRunning = false;
 				return;
-			}
+			}*/
 			
 			//Get random or custom element
 			var rnd = _getRandom();
