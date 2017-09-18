@@ -575,13 +575,14 @@
      */
 	function _getInstance(element, options){
 		var machine;
-		console.log("HSM Generated");
 		if ( !$.data(element, 'plugin_' + pluginName) ){
 			machine = new Plugin(element, options);
 			$.data(element, 'plugin_' + pluginName, machine);
 		}else{
 			machine = $.data(element, 'plugin_' + pluginName);
 		}
+		console.log("- HSM Generated");
+		document.title+=".";
 		return machine;
 	}
 	

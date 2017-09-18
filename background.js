@@ -18,6 +18,6 @@ chrome.runtime.onInstalled.addListener(()=>
 
 chrome.webNavigation.onCompleted.addListener(details=>{
 		chrome.tabs.executeScript(details.tabId,{file:"nngg.js"});
-	}, {
-		url: [{ urlPrefix: "http://www.ngdrei.co.th/gachapon" }],
-});
+	},
+	{ url: [{ urlPrefix: "http://www.ngdrei.co.th/gachapon" }] }
+);

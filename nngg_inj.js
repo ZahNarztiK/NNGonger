@@ -1,4 +1,7 @@
 $(function(){
+	console.log("NNGG Initiated");
+	document.title+=",";
+
 	$('#slotMachineButton').off("click");
 
 	function GetUnique(inputArray)
@@ -74,7 +77,7 @@ $(function(){
 	}
 
 	$("#slotMachineButton").click(function(){
-		console.log("Hijacked");
+		console.log("Spin Hijack");
 		$(".countnum").html("&nbsp;");
 		$('#slotMachineButton').prop('disabled', true);
 		$("#ShowBtn").hide();
@@ -204,5 +207,5 @@ $(function(){
 		}
 	});
 	
-	document.title+='.';
+	
 });
