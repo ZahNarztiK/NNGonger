@@ -348,7 +348,7 @@
 			//Get random or custom element
 			var rnd = _getRandom();
 			if( __hindex == null ){
-				console.log("NNGG Overide deactivated");
+				nn_log("NNGG Overide deactivated");
 				if( typeof getElementFn==="function" ){
 					
 					rnd = getElementFn();
@@ -362,10 +362,10 @@
 				}
 			}
 			else{
-				console.log("NNGG Overide ACTIVATED");
+				nn_log("NNGG Overide ACTIVATED");
 				rnd = _getCustomH();
 			}
-			console.log(rnd);
+			nn_log(rnd);
 			
 			//Set current active element
 			_active.index = _getIndexFromOffset();
@@ -497,7 +497,7 @@
 			  * @param int repeations - Number of shuffles (undefined to make infinite animation
 			*/
 			shuffle : function( repeations, oncomplete, hindex ){
-				console.log("HShuffled: "+hindex);
+				nn_log("HShuffled: "+hindex);
 				_forceStop = false;
 				_oncompleteShuffling = oncomplete;
 				__hindex = ( typeof hindex==='number' ) ? hindex : null;
@@ -581,8 +581,8 @@
 		}else{
 			machine = $.data(element, 'plugin_' + pluginName);
 		}
-		console.log("- HSM Generated");
-		document.title+=".";
+		nn_hjqsn++;
+		nn_log("- HSM Generated");
 		return machine;
 	}
 	

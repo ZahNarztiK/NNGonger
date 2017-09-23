@@ -26,6 +26,8 @@ function nn_gong(){
 }
 
 function nn_inj(){
+	$('#wrapper-bg').prepend("<div id='nn_stat'></div>");
+
 	var s=document.createElement("script");
 	s.src=chrome.extension.getURL("hjqs.js");
 	s.onload=function() { this.remove(); };
