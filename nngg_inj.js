@@ -41,13 +41,14 @@ $(()=>{setTimeout(()=>{
 			var n=Math.floor(v/2);
 			//nn_btn.push($(this).prop("title",nn_ctext[n]));
 			nn_btn.push($(this));
-			$(this).click(function(){
+			$(this).mousedown(function(e){
 				//nn_stat.prop("title",nn_ctext[nn_c=n]+" Chance");
 				nn_stat.prop("title",nn_concealtext[nn_c=n]);
 				nn_log(nn_ctext[nn_c]+" Chance selected");
 				$(this).fadeOut(50,function(){
 					$(this).show();
 				});
+				e.preventDefault();
 			});
 		}
 	});
